@@ -1,0 +1,23 @@
+flutter_native_splash:
+  # The color is used as a fallback and for Android 12+ splash icon background
+  color: "#2196F3"
+  
+  # The image is the logo that will be centered on the splash screen
+  image: assets/images/splash/logo.png
+  
+  # The background image is used for the gradient effect
+  # background_image: assets/images/splash/background.png
+  
+  
+  # Android 12+ specific configuration
+  android_12:
+    image: assets/images/splash/logo.png
+    color: "#2196F3"
+    
+  # Enable for different platforms
+  android: true
+  ios: true
+  web: true
+
+  # Appearance settings
+  fullscreen: true
