@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/foundation/diagnostics.dart';
 import 'package:medical_irkutsk/core/theme/theme.dart';
 import 'package:medical_irkutsk/features/user_greeting/presentation/registration_screen.dart';
 import 'package:medical_irkutsk/features/user_greeting/presentation/forgot_password_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    // TODO: implement debugFillProperties
+    super.debugFillProperties(properties);
+    properties.add(IntProperty('Хз, ну тест короче', 1233221));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +28,16 @@ class LoginScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 40),
               // Header
-              Text(
-                'Войдите в аккаунт',
-                style: textTheme.displayMedium,
-              ),
+              Text('Войдите в аккаунт', style: textTheme.displayMedium),
               const SizedBox(height: 8),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
                   'Войдите в аккаунт, чтобы продолжить\nпользоваться MediMo',
-                  style: textTheme.bodySmall?.copyWith(fontSize: 14, height: 1.4),
+                  style: textTheme.bodySmall?.copyWith(
+                    fontSize: 14,
+                    height: 1.4,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -83,13 +91,10 @@ class LoginScreen extends StatelessWidget {
               // Divider
               Row(
                 children: [
-                   const Expanded(child: Divider()),
-                   Padding(
+                  const Expanded(child: Divider()),
+                  Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Text(
-                      'или',
-                      style: textTheme.bodyMedium,
-                    ),
+                    child: Text('или', style: textTheme.bodyMedium),
                   ),
                   const Expanded(child: Divider()),
                 ],
@@ -142,14 +147,15 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildInputField(BuildContext context, String label, {bool isPassword = false}) {
+  Widget _buildInputField(
+    BuildContext context,
+    String label, {
+    bool isPassword = false,
+  }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          label,
-          style: Theme.of(context).textTheme.bodyMedium,
-        ),
+        Text(label, style: Theme.of(context).textTheme.bodyMedium),
         const SizedBox(height: 8),
         TextField(
           obscureText: isPassword,
