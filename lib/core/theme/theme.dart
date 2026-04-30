@@ -9,7 +9,7 @@ class AppColors {
   // Text colors
   static const Color textPrimary = Color(0xFF2E3A59);
   static const Color textSecondary = Color(0xFF7C8DB0);
-  
+
   // Background and UI colors
   static const Color background = Colors.white;
   static const Color inputFill = Color(0xFFE6F3FF);
@@ -40,7 +40,7 @@ class AppTheme {
         secondary: AppColors.primaryDark,
         surface: AppColors.background,
       ),
-      
+
       // Text Theme
       textTheme: const TextTheme(
         // Titles (e.g. "Войдите в аккаунт")
@@ -68,10 +68,7 @@ class AppTheme {
           color: AppColors.textPrimary,
         ),
         // Small text / Footer
-        bodySmall: TextStyle(
-          fontSize: 14,
-          color: AppColors.textSecondary,
-        ),
+        bodySmall: TextStyle(fontSize: 14, color: AppColors.textSecondary),
       ),
 
       // Elevated Button Theme
@@ -83,10 +80,7 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),
-          textStyle: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
+          textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           elevation: 0,
         ),
       ),
@@ -95,7 +89,10 @@ class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: AppColors.inputFill,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 18,
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: BorderSide.none,
@@ -126,9 +123,7 @@ class AppTheme {
           }
           return Colors.transparent;
         }),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
         side: const BorderSide(color: AppColors.primary, width: 1.5),
       ),
     );

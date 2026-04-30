@@ -19,16 +19,16 @@ class RegistrationScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 40),
               // Header
-              Text(
-                'Создайте аккаунт',
-                style: textTheme.displayMedium,
-              ),
+              Text('Создайте аккаунт', style: textTheme.displayMedium),
               const SizedBox(height: 8),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
                   'Создайте аккаунт, чтобы сохранить свои данные\nи свободно пользоваться MediMo',
-                  style: textTheme.bodySmall?.copyWith(fontSize: 14, height: 1.4),
+                  style: textTheme.bodySmall?.copyWith(
+                    fontSize: 14,
+                    height: 1.4,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -43,10 +43,7 @@ class RegistrationScreen extends StatelessWidget {
               // Terms Checkbox
               Row(
                 children: [
-                  Checkbox(
-                    value: false,
-                    onChanged: (val) {},
-                  ),
+                  Checkbox(value: true, onChanged: (val) {}),
                   Expanded(
                     child: Text(
                       'Я согласен с политикой конфиденциальности',
@@ -64,13 +61,16 @@ class RegistrationScreen extends StatelessWidget {
                   gradient: AppColors.primaryGradientHorizontal,
                   borderRadius: BorderRadius.circular(30),
                 ),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    shadowColor: Colors.transparent,
+
+                child: RepaintBoundary(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                    ),
+                    child: const Text('Зарегистрироваться'),
                   ),
-                  child: const Text('Зарегистрироваться'),
                 ),
               ),
               const SizedBox(height: 30),
@@ -80,10 +80,7 @@ class RegistrationScreen extends StatelessWidget {
                   const Expanded(child: Divider()),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Text(
-                      'или',
-                      style: textTheme.bodyMedium,
-                    ),
+                    child: Text('или', style: textTheme.bodyMedium),
                   ),
                   const Expanded(child: Divider()),
                 ],
@@ -105,17 +102,12 @@ class RegistrationScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Уже зарегистрированы? ',
-                    style: textTheme.bodySmall,
-                  ),
+                  Text('Уже зарегистрированы? ', style: textTheme.bodySmall),
                   GestureDetector(
                     onTap: () {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => const LoginScreen(),
-                        ),
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
                       );
                     },
                     child: const Text(
@@ -137,14 +129,15 @@ class RegistrationScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildInputField(BuildContext context, String label, {bool isPassword = false}) {
+  Widget _buildInputField(
+    BuildContext context,
+    String label, {
+    bool isPassword = false,
+  }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          label,
-          style: Theme.of(context).textTheme.bodyMedium,
-        ),
+        Text(label, style: Theme.of(context).textTheme.bodyMedium),
         const SizedBox(height: 8),
         TextField(
           obscureText: isPassword,

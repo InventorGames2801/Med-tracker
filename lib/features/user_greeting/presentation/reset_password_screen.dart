@@ -42,9 +42,7 @@ class ResetPasswordScreen extends StatelessWidget {
                     // Navigate back to LoginScreen and clear stack
                     Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => const LoginScreen(),
-                      ),
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
                       (route) => false,
                     );
                   },
@@ -62,14 +60,15 @@ class ResetPasswordScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildInputField(BuildContext context, String label, {bool isPassword = false}) {
+  Widget _buildInputField(
+    BuildContext context,
+    String label, {
+    bool isPassword = false,
+  }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          label,
-          style: Theme.of(context).textTheme.bodyMedium,
-        ),
+        Text(label, style: Theme.of(context).textTheme.bodyMedium),
         const SizedBox(height: 8),
         TextField(
           obscureText: isPassword,
