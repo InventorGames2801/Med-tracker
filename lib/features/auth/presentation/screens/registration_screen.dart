@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medical_irkutsk/core/theme/theme.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegistrationScreen extends StatelessWidget {
+  const RegistrationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +19,12 @@ class LoginScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 40),
               // Header
-              Text('Войдите в аккаунт', style: textTheme.displayMedium),
+              Text('Создайте аккаунт', style: textTheme.displayMedium),
               const SizedBox(height: 8),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
-                  'Войдите в аккаунт, чтобы продолжить\nпользоваться MediMo',
+                  'Создайте аккаунт, чтобы сохранить свои данные\nи свободно пользоваться MediMo',
                   style: textTheme.bodySmall?.copyWith(
                     fontSize: 14,
                     height: 1.4,
@@ -31,29 +32,28 @@ class LoginScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              const SizedBox(height: 60),
+              const SizedBox(height: 50),
               // Form Fields
+              _buildInputField(context, 'Имя'),
+              const SizedBox(height: 20),
               _buildInputField(context, 'Логин'),
-              const SizedBox(height: 24),
+              const SizedBox(height: 20),
               _buildInputField(context, 'Пароль', isPassword: true),
-              const SizedBox(height: 12),
-              // Forgot Password
-              Align(
-                alignment: Alignment.centerRight,
-                child: GestureDetector(
-                  onTap: () {},
-                  child: const Text(
-                    'Забыли пароль?',
-                    style: TextStyle(
-                      color: AppColors.primary,
-                      fontWeight: FontWeight.bold,
-                      decoration: TextDecoration.underline,
+              const SizedBox(height: 10),
+              // Terms Checkbox
+              Row(
+                children: [
+                  Checkbox(value: true, onChanged: (val) {}),
+                  Expanded(
+                    child: Text(
+                      'Я согласен с политикой конфиденциальности',
+                      style: textTheme.bodySmall?.copyWith(fontSize: 13),
                     ),
                   ),
-                ),
+                ],
               ),
-              const SizedBox(height: 50),
-              // Login Button
+              const SizedBox(height: 40),
+              // Register Button
               Container(
                 width: double.infinity,
                 height: 60,
@@ -61,16 +61,19 @@ class LoginScreen extends StatelessWidget {
                   gradient: AppColors.primaryGradientHorizontal,
                   borderRadius: BorderRadius.circular(30),
                 ),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    shadowColor: Colors.transparent,
+
+                child: RepaintBoundary(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                    ),
+                    child: const Text('Зарегистрироваться'),
                   ),
-                  child: const Text('Войти'),
                 ),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 30),
               // Divider
               Row(
                 children: [
@@ -82,7 +85,7 @@ class LoginScreen extends StatelessWidget {
                   const Expanded(child: Divider()),
                 ],
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 30),
               // Social Icons
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -94,19 +97,18 @@ class LoginScreen extends StatelessWidget {
                   _buildSocialIcon('yandex_icon.png'),
                 ],
               ),
-              const SizedBox(height: 60),
+              const SizedBox(height: 40),
               // Footer Link
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    'Нет аккаунта? ',
-                    style: TextStyle(color: AppColors.textSecondary),
-                  ),
+                  Text('Уже зарегистрированы? ', style: textTheme.bodySmall),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.go('/login');
+                    },
                     child: const Text(
-                      'Зарегистрируйтесь',
+                      'Войдите',
                       style: TextStyle(
                         color: AppColors.primary,
                         fontWeight: FontWeight.bold,
@@ -116,6 +118,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(height: 40),
             ],
           ),
         ),

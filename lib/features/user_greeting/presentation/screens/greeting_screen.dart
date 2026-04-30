@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class GreetingScreen extends StatelessWidget {
   const GreetingScreen({super.key});
@@ -43,11 +44,10 @@ class GreetingScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const Spacer(flex: 3),
-              // Bottom Button
               Padding(
                 padding: const EdgeInsets.only(bottom: 40.0),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => context.go('/onboarding'),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medical_irkutsk/core/theme/theme.dart';
-import 'package:medical_irkutsk/features/user_greeting/presentation/forgot_password_screen.dart';
+import 'package:medical_irkutsk/features/auth/presentation/screens/forgot_password_screen.dart';
 
 class ForgotPasswordPhoneScreen extends StatelessWidget {
   const ForgotPasswordPhoneScreen({super.key});
