@@ -1,22 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/diagnostics.dart';
 import 'package:medical_irkutsk/core/theme/theme.dart';
 import 'package:medical_irkutsk/features/user_greeting/presentation/registration_screen.dart';
 import 'package:medical_irkutsk/features/user_greeting/presentation/forgot_password_screen.dart';
-import 'package:medical_irkutsk/features/user_greeting/presentation/testclass.dart';
 
 class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
-
-  Testclass tc = Testclass(login: 'login123', password: 'qwerty');
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    // TODO: implement debugFillProperties
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty<Testclass>('Test class', tc));
-    properties.add(IntProperty('Хз, ну тест короче', 1233221));
-  }
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
