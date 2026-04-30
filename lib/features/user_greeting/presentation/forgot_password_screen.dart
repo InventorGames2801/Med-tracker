@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medical_irkutsk/core/theme/theme.dart';
-import 'package:medical_irkutsk/features/user_greeting/presentation/verification_code_screen.dart';
-import 'package:medical_irkutsk/features/user_greeting/presentation/forgot_password_phone_screen.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
@@ -49,14 +47,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30),
                 ),
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const VerificationCodeScreen(),
-                      ),
-                    );
-                  },
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
                     shadowColor: Colors.transparent,
@@ -67,14 +58,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               const SizedBox(height: 24),
               // Other methods link
               GestureDetector(
-                onTap: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ForgotPasswordPhoneScreen(),
-                    ),
-                  );
-                },
+                onTap: () {},
                 child: const Text(
                   'Другой способ',
                   style: TextStyle(

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medical_irkutsk/core/theme/theme.dart';
-import 'package:medical_irkutsk/features/user_greeting/presentation/registration_screen.dart';
-import 'package:medical_irkutsk/features/user_greeting/presentation/forgot_password_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -43,14 +41,7 @@ class LoginScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.centerRight,
                 child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ForgotPasswordScreen(),
-                      ),
-                    );
-                  },
+                  onTap: () {},
                   child: const Text(
                     'Забыли пароль?',
                     style: TextStyle(
@@ -113,14 +104,7 @@ class LoginScreen extends StatelessWidget {
                     style: TextStyle(color: AppColors.textSecondary),
                   ),
                   GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const RegistrationScreen(),
-                        ),
-                      );
-                    },
+                    onTap: () {},
                     child: const Text(
                       'Зарегистрируйтесь',
                       style: TextStyle(

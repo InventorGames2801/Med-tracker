@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medical_irkutsk/core/theme/theme.dart';
-import 'package:medical_irkutsk/features/user_greeting/presentation/registration_screen.dart';
 
 class OnboardingFlow extends StatefulWidget {
   const OnboardingFlow({super.key});
@@ -46,14 +45,7 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
             footerText:
                 'MediMo не назначает вам лечение,\nа только помогает отслеживать прогресс.',
             buttonText: 'Начать',
-            onButtonPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const RegistrationScreen(),
-                ),
-              );
-            },
+            onButtonPressed: () {},
           ),
         ],
       ),

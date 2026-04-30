@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medical_irkutsk/core/theme/theme.dart';
-import 'package:medical_irkutsk/features/user_greeting/presentation/login_screen.dart';
 
 class RegistrationScreen extends StatelessWidget {
   const RegistrationScreen({super.key});
@@ -104,12 +103,7 @@ class RegistrationScreen extends StatelessWidget {
                 children: [
                   Text('Уже зарегистрированы? ', style: textTheme.bodySmall),
                   GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginScreen()),
-                      );
-                    },
+                    onTap: () {},
                     child: const Text(
                       'Войдите',
                       style: TextStyle(

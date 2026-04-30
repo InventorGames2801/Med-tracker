@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medical_irkutsk/core/theme/theme.dart';
-import 'package:medical_irkutsk/features/user_greeting/presentation/reset_password_screen.dart';
 
 class VerificationCodeScreen extends StatelessWidget {
   const VerificationCodeScreen({super.key});
@@ -28,7 +27,10 @@ class VerificationCodeScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
                   'Мы отправили вам на почту код подтверждения\nВведите его в поле ниже, чтобы сбросить пароль',
-                  style: textTheme.bodySmall?.copyWith(fontSize: 14, height: 1.4),
+                  style: textTheme.bodySmall?.copyWith(
+                    fontSize: 14,
+                    height: 1.4,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -37,16 +39,16 @@ class VerificationCodeScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Column(
-                   crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Код',
-                      style: textTheme.bodyMedium,
-                    ),
+                    Text('Код', style: textTheme.bodyMedium),
                     const SizedBox(height: 12),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: List.generate(5, (index) => _buildCodeBox(context)),
+                      children: List.generate(
+                        5,
+                        (index) => _buildCodeBox(context),
+                      ),
                     ),
                   ],
                 ),
@@ -54,9 +56,12 @@ class VerificationCodeScreen extends StatelessWidget {
               const SizedBox(height: 30),
               // Timer
               RichText(
-                 textAlign: TextAlign.center,
+                textAlign: TextAlign.center,
                 text: TextSpan(
-                  style: textTheme.bodySmall?.copyWith(fontSize: 14, fontWeight: FontWeight.bold),
+                  style: textTheme.bodySmall?.copyWith(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
                   children: const [
                     TextSpan(text: 'Отправить код повторно через '),
                     TextSpan(
@@ -77,14 +82,7 @@ class VerificationCodeScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30),
                 ),
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ResetPasswordScreen(),
-                      ),
-                    );
-                  },
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
                     shadowColor: Colors.transparent,

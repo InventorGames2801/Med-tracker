@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/diagnostics.dart';
-import 'package:medical_irkutsk/features/user_greeting/presentation/onboarding_flow.dart';
 
 class GreetingScreen extends StatelessWidget {
   const GreetingScreen({super.key});
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    // TODO: implement debugFillProperties
-    super.debugFillProperties(properties);
-    properties.add(StringProperty('Ну хз, тест', '123'));
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,14 +47,7 @@ class GreetingScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 40.0),
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const OnboardingFlow(),
-                      ),
-                    );
-                  },
+                  onPressed: () {},
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
